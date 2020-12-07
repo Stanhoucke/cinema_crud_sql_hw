@@ -88,3 +88,22 @@ WHERE title = 'Iron Man 2';
 UPDATE movies
 SET show_time = '20:45'
 WHERE title = 'Iron Man 3';
+
+-- Extension
+
+-- 1.  Research how to delete multiple entries from your table in a single command.
+	-- From list of values:
+		-- DELETE FROM people
+		-- WHERE id IN (2, 4, 6, 8);
+	-- Based on query result:
+		-- DELETE FROM people
+		-- WHERE name in (SELECT name FROM people WHERE id = 3);
+	-- Between a range of values:
+		-- DELETE FROM movies
+		-- WHERE year BETWEEN 2015 AND 2020;
+		-- Or can use this syntax:
+		-- DELETE FROM movies
+		-- WHERE year >= 2015 AND year <= 2020;
+
+		-- DELETE FROM movies
+		-- WHERE show_time BETWEEN '12:00' AND '20:20'; -- Works on string/varchar too, need to be careful as '10' comes before '9'...
